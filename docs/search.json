@@ -1,0 +1,26 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-04-11T16:10:55-06:00"
+    },
+    {
+      "path": "index.html",
+      "title": "GF0604 Procesamiento de datos geográficos 2021-I. Lección 03",
+      "description": "Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lección 03.\n",
+      "author": [
+        {
+          "name": "Manuel Vargas",
+          "url": "https://github.com/mfvargas"
+        }
+      ],
+      "contents": "\r\n\r\nContents\r\nResumen\r\nTrabajo previo\r\n\r\nResumen\r\nEn esta lección, se estudiará la interfaz de línea de comandos del sistema operativo y la interfaz de línea de comandos de la biblioteca GDAL para procesamiento de datos geoespaciales.\r\nTrabajo previo\r\nRealice el tutorial Command Prompt: 11 basic commands you should know (cd, dir, mkdir, etc.) - Digital Citizen.\r\nInstale en su computadora los programas ejecutables de GDAL. Siga las instrucciones de la sección de Downloading GDAL Binaries. SUGERENCIA: si va a realizar la instalación en Windows, la forma más sencilla es a través del instalador de OSGeo4W (64 bits).\r\nRealice el tutorial GDAL/OGR - Automated Geodata Processing.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-04-11T16:54:52-06:00"
+    }
+  ],
+  "collections": []
+}

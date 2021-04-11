@@ -1,0 +1,30 @@
+---
+title: "GF0604 Procesamiento de datos geográficos 2021-I. Lección 03"
+author: 
+- name: Manuel Vargas
+  url: https://github.com/mfvargas
+  affiliation: Universidad de Costa Rica
+  affiliation_url: https://www.ucr.ac.cr/
+description: |
+  Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Lección 03.
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
+# Resumen
+En esta lección, se estudiará la interfaz de línea de comandos del sistema operativo y la interfaz de línea de comandos de la biblioteca GDAL para procesamiento de datos geoespaciales.
+
+# Trabajo previo
+- Realice el tutorial [Command Prompt: 11 basic commands you should know (cd, dir, mkdir, etc.) - Digital Citizen](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands).
+- Instale en su computadora los programas ejecutables de GDAL. Siga las instrucciones de la sección de [Downloading GDAL Binaries](https://gdal.org/download.html). **SUGERENCIA: si va a realizar la instalación en Windows, la forma más sencilla es a través del [instalador de OSGeo4W (64 bits)](http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe)**.
+- Realice el tutorial [GDAL/OGR - Automated Geodata Processing](https://jakobmiksch.eu/post/gdal_ogr/).
