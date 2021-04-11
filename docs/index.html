@@ -2466,8 +2466,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1 id="trabajo-previo">Trabajo previo</h1>
 <ul>
 <li>Realice el tutorial <a href="https://www.digitalcitizen.life/command-prompt-how-use-basic-commands">Command Prompt: 11 basic commands you should know (cd, dir, mkdir, etc.) - Digital Citizen</a>.</li>
-<li>Instale en su computadora los programas ejecutables de GDAL. Siga las instrucciones de la sección de <a href="https://gdal.org/download.html">Downloading GDAL Binaries</a>. <strong>SUGERENCIA: si va a realizar la instalación en Windows, la forma más sencilla es a través del <a href="http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe">instalador de OSGeo4W (64 bits)</a></strong>.</li>
-<li>Realice el tutorial <a href="https://jakobmiksch.eu/post/gdal_ogr/">GDAL/OGR - Automated Geodata Processing</a>.</li>
+<li>Instale en su computadora los programas ejecutables de GDAL. Siga las instrucciones de la sección de <a href="https://gdal.org/download.html">Downloading GDAL Binaries</a>.
+<ul>
+<li><strong>SUGERENCIA: si va a realizar la instalación en Windows, la forma más sencilla es a través del <a href="http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe">instalador de OSGeo4W (64 bits)</a>. Para eso, ejecute las siguientes instrucciones:</strong><br />
+</li>
+<li>Si ya ha ejecutado el instalador de OSGeo4W (ej. para instalar QGIS), posiblemente ya tiene instalada la biblioteca GDAL. Para comprobarlo, busque en el menú principal de Windows el grupo <em>OSGeo4W</em> y la opción <em>OSGeo4W Shell</em>. Ejecútela y escriba el comando <code>ogrinfo</code>. Si lo que se despliega no es un mensaje de error, omita el paso siguiente.<br />
+</li>
+<li>Si no tiene el grupo <em>OSGeo4W</em> ni la opción <em>OSGeo4W Shell</em> en el menú principal de Windows, ejecute el instalador de OSGeo4W y elija la opción <em>Advanced install - Install from Internet</em>. Cuando llegue a la sección de <em>Select packages</em>, en <em>Commandline_Utilities</em> elija <em>gdal: The GDAL/OGR library and command line tools</em>. Cuando finalice la instalación, busque en el menú principal de Windows el grupo <em>OSGeo4W</em> y la opción <em>OSGeo4W Shell</em>. Ejecútela y escriba el comando <code>ogrinfo</code>. Debe desplegarse la sintaxis del comando y no un mensaje de error.</li>
+</ul></li>
+<li>Una vez que haya instalado GDAL, realice el tutorial <a href="https://jakobmiksch.eu/post/gdal_ogr/">GDAL/OGR - Automated Geodata Processing</a>.</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
