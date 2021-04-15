@@ -35,4 +35,5 @@ En esta lección, se estudiará la interfaz de línea de comandos del sistema op
 
 # Contenidos
 
-[01 Interfaces de línea de comandos de sistemas operativos](01-interfaces-linea-comandos-sistemas-operativos.html)
+[01 Interfaces de línea de comandos de sistemas operativos](01-interfaces-linea-comandos-sistemas-operativos.html)  
+[02 Interfaz de línea de comandos de GDAL](02-interfaz-linea-comandos-gdal.html)  
