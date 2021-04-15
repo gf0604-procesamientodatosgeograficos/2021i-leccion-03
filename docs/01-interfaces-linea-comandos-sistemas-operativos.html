@@ -2455,7 +2455,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="#windows">Windows</a>
 <ul>
-<li><a href="#comandos-comúnmente-utilizados">Comandos comúnmente utilizados</a></li>
+<li><a href="#comandos-comúnmente-utilizados">Comandos comúnmente utilizados</a>
+<ul>
+<li><a href="#help">help</a></li>
+<li><a href="#cls">cls</a></li>
+<li><a href="#dir">dir</a></li>
+<li><a href="#more">more</a></li>
+<li><a href="#cd">cd</a></li>
+<li><a href="#md">md</a></li>
+<li><a href="#copy">copy</a></li>
+<li><a href="#ren">ren</a></li>
+<li><a href="#del">del</a></li>
+<li><a href="#rd">rd</a></li>
+<li><a href="#exit">exit</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -2466,9 +2479,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><strong>Rutas absolutas</strong>: se especifican a partir del directorio raíz. Por ejemplo: <code>C:\Users\mfvargas</code>.<br />
 </li>
-<li><strong>Rutas relativas</strong>: se especifican a partir de un directorio cualquiera (ej. el directorio actual). Por ejemplo: si el directorio actual es <code>C:\Users\mfvargas</code> y se le añade la ruta relativa <code>Downloads\datos</code>, la ruta completa es <code>C:\Users\mfvargas\Downloads\datos</code></li>
+<li><strong>Rutas relativas</strong>: se especifican a partir de un directorio cualquiera (ej. el directorio actual). Por ejemplo: si el directorio actual es <code>C:\Users\mfvargas</code> y se le añade la ruta relativa <code>Downloads\datos</code>, la ruta completa es <code>C:\Users\mfvargas\Downloads\datos</code>.</li>
 </ul>
 <h2 id="comandos-comúnmente-utilizados">Comandos comúnmente utilizados</h2>
+<p>Se presentan ejemplos de sintaxis y de uso de algunos de los comandos más comunes.</p>
+<h3 id="help">help</h3>
+<p>El comando <a href="https://ss64.com/nt/help.html">help</a> proporciona ayuda sobre los comandos del sistema operativo.</p>
+<pre class="shell"><code># Ejemplos:
+help
+help dir
+help copy</code></pre>
+<h3 id="cls">cls</h3>
+<p>El comando <a href="https://ss64.com/nt/cls.html">cls</a> (<em>clear screen</em>) limpia la pantalla.</p>
+<pre class="shell"><code># Ejemplos:
+cls</code></pre>
+<h3 id="dir">dir</h3>
 <p>El comando <a href="https://ss64.com/nt/dir.html">dir</a> (<em>directory</em>) despliega la lista de archivos y subdirectorios de un directorio.</p>
 <pre class="shell"><code># Listado sencillo
 dir
@@ -2484,32 +2509,67 @@ dir *.py
 # Listado de todos los archivos cuyo nombre inicia con un patrón determinado
 # Ejemplos:
 dir s*</code></pre>
-<p>El comando <a href="https://ss64.com/nt/cd.html">cd</a> (<em>change directory</em>) se utiliza para cambiar de directorio.</p>
-<pre class="shell"><code># Cambio de directorio
-cd &lt;ruta-directorio&gt;
-# Ejemplos:
-cd C:\Users\mfvargas
-cd Pictures
-
-# Cambio al directorio raíz
-cd \
-
-# Cambio al directorio padre
-cd ..
-
-# Impresión del directorio actual
-echo %cd%</code></pre>
-<p>El comando <a href="https://ss64.com/nt/md.html">md</a> (<em>make directory</em>) se utiliza para crear un directorio.</p>
-<pre class="shell"><code># Creación de un directorio
-md &lt;nuevo-directorio&gt;
-# Ejemplos:
-md miproyecto</code></pre>
+<h3 id="more">more</h3>
 <p>El comando <a href="https://ss64.com/nt/more.html">more</a> se utiliza para desplegar de forma paginada la salida de un proceso. Puede emplearse para desplegar el contenido de un archivo de texto.</p>
 <pre class="shell"><code># Despliegue del contenido de un archivo
 more &lt;ruta-archivo&gt;
 # Ejemplos:
 more hola.py</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="cd">cd</h3>
+<p>El comando <a href="https://ss64.com/nt/cd.html">cd</a> (<em>change directory</em>) se utiliza para cambiar de directorio.</p>
+<pre class="shell"><code># Cambio de directorio
+cd &lt;ruta-directorio&gt;
+# Ejemplos:
+cd C:\Users\mfvargas
+cd Documents
+
+# Cambio al directorio padre
+cd ..
+
+# Cambio al directorio raíz
+cd \
+
+# Impresión del directorio actual
+echo %cd%</code></pre>
+<h3 id="md">md</h3>
+<p>El comando <a href="https://ss64.com/nt/md.html">md</a> (<em>make directory</em>) se utiliza para crear un directorio.</p>
+<pre class="shell"><code># Creación de un directorio
+md &lt;nuevo-directorio&gt;
+# Ejemplos:
+md miproyecto
+md miproyecto2</code></pre>
+<h3 id="copy">copy</h3>
+<p>El comando <a href="https://ss64.com/nt/copy.html">copy</a> se utiliza para copiar archivos.</p>
+<pre class="shell"><code># Creación de un archivo de prueba
+echo &quot;Contenido de archivo de prueba&quot; &gt; prueba.txt</code></pre>
+<pre class="shell"><code># Copia del archivo
+copy &lt;ruta-archivo-origen&gt; &lt;ruta-archivo-destino&gt;
+# Ejemplos:
+copy prueba.txt otraprueba.txt</code></pre>
+<h3 id="ren">ren</h3>
+<p>El comando <a href="https://ss64.com/nt/ren.html">ren</a> (<em>rename</em>) se utiliza para renombrar archivos.</p>
+<pre class="shell"><code># Renombramiento de un archivo
+ren &lt;nombre-archivo-actual&gt; &lt;nombre-archivo-nuevo&gt;
+# Ejemplos:
+ren otraprueba.txt otraprueba2.txt</code></pre>
+<h3 id="del">del</h3>
+<p>El comando <a href="https://ss64.com/nt/del.html">del</a> (<em>delete</em>) se utiliza para borrar archivos.</p>
+<pre class="shell"><code># Borrado de un archivo
+del &lt;ruta-archivo&gt;
+# Ejemplos:
+del prueba.txt
+del *.txt</code></pre>
+<h3 id="rd">rd</h3>
+<p>El comando <a href="https://ss64.com/nt/rd.html">rd</a> (<em>remove directory</em>) se utiliza para borrar un directorio.</p>
+<pre class="shell"><code># Borrado de un directorio
+rd &lt;directorio-a-borrar&gt;
+# Ejemplos:
+rd miproyecto2</code></pre>
+<h3 id="exit">exit</h3>
+<p>El comando <a href="https://ss64.com/nt/exit.html">exit</a> cierra la sesión de trabajo con la línea de comandos.</p>
+<pre class="shell"><code># Ejemplos:
+exit</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

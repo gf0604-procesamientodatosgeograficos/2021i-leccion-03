@@ -21,9 +21,31 @@ El sistema de archivos de Windows tiene una estructura jerárquica organizada en
 Cada archivo y directorio se identifica mediante una ruta. Hay dos tipos de rutas:  
 
 - **Rutas absolutas**: se especifican a partir del directorio raíz. Por ejemplo: ```C:\Users\mfvargas```.  
-- **Rutas relativas**: se especifican a partir de un directorio cualquiera (ej. el directorio actual). Por ejemplo: si el directorio actual es ```C:\Users\mfvargas``` y se le añade la ruta relativa ```Downloads\datos```, la ruta completa es ```C:\Users\mfvargas\Downloads\datos```
+- **Rutas relativas**: se especifican a partir de un directorio cualquiera (ej. el directorio actual). Por ejemplo: si el directorio actual es ```C:\Users\mfvargas``` y se le añade la ruta relativa ```Downloads\datos```, la ruta completa es ```C:\Users\mfvargas\Downloads\datos```.
 
 ## Comandos comúnmente utilizados
+Se presentan ejemplos de sintaxis y de uso de algunos de los comandos más comunes.
+
+### help
+El comando [help](https://ss64.com/nt/help.html) proporciona ayuda sobre los comandos del sistema operativo.
+
+```shell
+# Ejemplos:
+help
+help dir
+help copy
+```
+
+### cls
+El comando [cls](https://ss64.com/nt/cls.html) (*clear screen*) limpia la pantalla.
+
+```shell
+# Ejemplos:
+cls
+```
+
+
+### dir
 El comando [dir](https://ss64.com/nt/dir.html) (*directory*) despliega la lista de archivos y subdirectorios de un directorio.
 
 ```shell
@@ -43,34 +65,7 @@ dir *.py
 dir s*
 ```
 
-El comando [cd](https://ss64.com/nt/cd.html) (*change directory*) se utiliza para cambiar de directorio.
-
-```shell
-# Cambio de directorio
-cd <ruta-directorio>
-# Ejemplos:
-cd C:\Users\mfvargas
-cd Pictures
-
-# Cambio al directorio raíz
-cd \
-
-# Cambio al directorio padre
-cd ..
-
-# Impresión del directorio actual
-echo %cd%
-```
-
-El comando [md](https://ss64.com/nt/md.html) (*make directory*) se utiliza para crear un directorio.
-
-```shell
-# Creación de un directorio
-md <nuevo-directorio>
-# Ejemplos:
-md miproyecto
-```
-
+### more
 El comando [more](https://ss64.com/nt/more.html) se utiliza para desplegar de forma paginada la salida de un proceso. Puede emplearse para desplegar el contenido de un archivo de texto.
 
 ```shell
@@ -80,6 +75,89 @@ more <ruta-archivo>
 more hola.py
 ```
 
+### cd
+El comando [cd](https://ss64.com/nt/cd.html) (*change directory*) se utiliza para cambiar de directorio.
 
+```shell
+# Cambio de directorio
+cd <ruta-directorio>
+# Ejemplos:
+cd C:\Users\mfvargas
+cd Documents
+
+# Cambio al directorio padre
+cd ..
+
+# Cambio al directorio raíz
+cd \
+
+# Impresión del directorio actual
+echo %cd%
+```
+
+### md
+El comando [md](https://ss64.com/nt/md.html) (*make directory*) se utiliza para crear un directorio.
+
+```shell
+# Creación de un directorio
+md <nuevo-directorio>
+# Ejemplos:
+md miproyecto
+md miproyecto2
+```
+
+### copy
+El comando [copy](https://ss64.com/nt/copy.html) se utiliza para copiar archivos.
+
+```shell
+# Creación de un archivo de prueba
+echo "Contenido de archivo de prueba" > prueba.txt
+```
+
+```shell
+# Copia del archivo
+copy <ruta-archivo-origen> <ruta-archivo-destino>
+# Ejemplos:
+copy prueba.txt otraprueba.txt
+```
+
+### ren
+El comando [ren](https://ss64.com/nt/ren.html) (*rename*) se utiliza para renombrar archivos.
+
+```shell
+# Renombramiento de un archivo
+ren <nombre-archivo-actual> <nombre-archivo-nuevo>
+# Ejemplos:
+ren otraprueba.txt otraprueba2.txt
+```
+
+### del
+El comando [del](https://ss64.com/nt/del.html) (*delete*) se utiliza para borrar archivos.
+
+```shell
+# Borrado de un archivo
+del <ruta-archivo>
+# Ejemplos:
+del prueba.txt
+del *.txt
+```
+
+### rd
+El comando [rd](https://ss64.com/nt/rd.html) (*remove directory*) se utiliza para borrar un directorio.
+
+```shell
+# Borrado de un directorio
+rd <directorio-a-borrar>
+# Ejemplos:
+rd miproyecto2
+```
+
+### exit
+El comando [exit](https://ss64.com/nt/exit.html) cierra la sesión de trabajo con la línea de comandos.
+
+```shell
+# Ejemplos:
+exit
+```
 
 
