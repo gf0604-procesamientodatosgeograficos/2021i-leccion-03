@@ -2422,6 +2422,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="https://www.youtube.com/playlist?list=PL1gEgLSwAJeI-aLFsld3jP47B9REqhUes">
 <i class="fab fa-youtube" aria-hidden="true"></i>
 </a>
+<a href="https://github.com/gf0604-procesamientodatosgeograficos/2021i-datos">
+<i class="fas fa-database" aria-hidden="true"></i>
+</a>
 </div>
 <div class="nav-right">
 <a href="https://gf0604-procesamientodatosgeograficos.github.io/2021i/">GF0604 2021-I</a>
@@ -2501,19 +2504,20 @@ ogrinfo -al -so /vsizip/ne_110m_admin_0_countries.zip
 ogrinfo -al -so ne_110m_admin_0_countries.shp</code></pre>
 <h4 id="ogr2ogr">ogr2ogr</h4>
 <p>El comando <a href="https://gdal.org/programs/ogr2ogr.html">ogr2ogr</a> realiza conversiones entre formatos de fuentes de datos geoespaciales. A la vez, realiza otras operaciones como selección de atributos y geometrías, filtrado por criterios espaciales y no espaciales, reproyección y validación de geometrías, entre otras.</p>
-<p>Conversión entre formatos:</p>
+<h5 id="conversión-entre-formatos">Conversión entre formatos</h5>
 <pre class="shell"><code># Despliegue de la lista de formatos vectoriales soportados por GDAL
 ogr2ogr --formats
 
 # Conversión de SHP a GeoJSON
 ogr2ogr -f GeoJSON ne_110m_admin_0_countries.geojson ne_110m_admin_0_countries.shp</code></pre>
-<p>Descarga desde un servicio WFS, validación de geometrías y reproyección:</p>
+<h5 id="descarga-desde-un-servicio-wfs-validación-de-geometrías-y-reproyección">Descarga desde un servicio WFS, validación de geometrías y reproyección</h5>
 <pre class="shell"><code># Descarga de la capa de cantones del IGN en el SNIT (https://www.snitcr.go.cr/)
-ogr2ogr -f GeoJSON -s_srs EPSG:5367 -t_srs EPSG:4326 -makevalid cantones.geojson WFS:&quot;http://geos.snitcr.go.cr/be/IGN_5/wfs&quot; &quot;IGN_5:limitecantonal_5k&quot;
+ogr2ogr -f GeoJSON -t_srs EPSG:4326 -makevalid cantones.geojson WFS:&quot;http://geos.snitcr.go.cr/be/IGN_5/wfs&quot; &quot;IGN_5:limitecantonal_5k&quot;
 
 # Información sobre la capa descargada
 ogrinfo -al -so cantones.geojson</code></pre>
-<p>Filtrado por atributos:</p>
+<p><strong>NOTA: si no puede acceder al servicio WFS del SNIT, descargue el archivo <code>cantones.geojson</code> de la dirección <a href="https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cantones.geojson">https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cantones.geojson</a>. Utilice la opción <em>Save Page As..</em> (Guardar página como…) al hacer clic derecho en su navegador web. Abra el archivo en QGIS (u otro SIG de escritorio) para verificar que se guardó correctamente.</strong></p>
+<h5 id="filtrado-por-atributos">Filtrado por atributos</h5>
 <pre class="shell"><code># Filtrado y extracción de los cantones con área &gt;= 2000 km2
 ogr2ogr -where &quot;area &gt;= 2000&quot; cantones-grandes.geojson cantones.geojson
 
@@ -2522,9 +2526,14 @@ ogr2ogr -where &quot;provincia = &#39;Heredia&#39;&quot; cantones-heredia.geojso
 
 # Filtrado y extracción de los cantones con área &gt;= 2000 km2 de la provincia de Limón
 ogr2ogr -where &quot;area &gt;= 2000 AND provincia = &#39;Limón&#39;&quot; cantones-grandes-limon.geojson cantones.geojson</code></pre>
-<p>Selección de atributos y filtrado:</p>
+<h5 id="selección-de-atributos-y-filtrado">Selección de atributos y filtrado</h5>
 <pre class="shell"><code># Extracción de los campos de provincia, cantón y área de los cantones de la provincia de Alajuela
 ogr2ogr -select &quot;provincia, canton, area&quot; -where &quot;provincia = &#39;Alajuela&#39;&quot; cantones-alajuela.geojson cantones.geojson</code></pre>
+<p><strong> Ejercicios:<br />
+1. Utilizando el archivo <code>cantones.geojson</code>, extraiga en otro archivo GeoJSON los cantones de la provincia de Guanacaste. Incluya todos los campos.<br />
+2. Utilizando el archivo <code>cantones.geojson</code>, extraiga en otro archivo GeoJSON los cantones de las provincia de Guanacaste, Puntarenas y Limón. Incluya todos los campos.<br />
+3. Repita el ejercicio 2, pero guarde el resultado en un archivo tipo Shapefile (SHP).<br />
+</strong></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

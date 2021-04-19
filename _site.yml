@@ -9,7 +9,9 @@ navbar:
     - icon: fab fa-github
       href: "https://github.com/gf0604-procesamientodatosgeograficos/2021i-leccion-03/"  
     - icon: fab fa-youtube
-      href: "https://www.youtube.com/playlist?list=PL1gEgLSwAJeI-aLFsld3jP47B9REqhUes"      
+      href: "https://www.youtube.com/playlist?list=PL1gEgLSwAJeI-aLFsld3jP47B9REqhUes" 
+    - icon: fas fa-database
+      href: "https://github.com/gf0604-procesamientodatosgeograficos/2021i-datos"       
   right:
     - text: "GF0604 2021-I"
       href: "https://gf0604-procesamientodatosgeograficos.github.io/2021i/"  

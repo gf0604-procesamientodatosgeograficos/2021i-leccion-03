@@ -68,7 +68,7 @@ ogrinfo -al -so ne_110m_admin_0_countries.shp
 #### ogr2ogr
 El comando [ogr2ogr](https://gdal.org/programs/ogr2ogr.html) realiza conversiones entre formatos de fuentes de datos geoespaciales. A la vez, realiza otras operaciones como selección de atributos y geometrías, filtrado por criterios espaciales y no espaciales, reproyección y validación de geometrías, entre otras.
 
-Conversión entre formatos:
+##### Conversión entre formatos
 
 ```shell
 # Despliegue de la lista de formatos vectoriales soportados por GDAL
@@ -78,17 +78,19 @@ ogr2ogr --formats
 ogr2ogr -f GeoJSON ne_110m_admin_0_countries.geojson ne_110m_admin_0_countries.shp
 ```
 
-Descarga desde un servicio WFS, validación de geometrías y reproyección:
+##### Descarga desde un servicio WFS, validación de geometrías y reproyección
 
 ```shell
 # Descarga de la capa de cantones del IGN en el SNIT (https://www.snitcr.go.cr/)
-ogr2ogr -f GeoJSON -s_srs EPSG:5367 -t_srs EPSG:4326 -makevalid cantones.geojson WFS:"http://geos.snitcr.go.cr/be/IGN_5/wfs" "IGN_5:limitecantonal_5k"
+ogr2ogr -f GeoJSON -t_srs EPSG:4326 -makevalid cantones.geojson WFS:"http://geos.snitcr.go.cr/be/IGN_5/wfs" "IGN_5:limitecantonal_5k"
 
 # Información sobre la capa descargada
 ogrinfo -al -so cantones.geojson
 ```
 
-Filtrado por atributos:
+**NOTA: si no puede acceder al servicio WFS del SNIT, descargue el archivo  ```cantones.geojson ``` de la dirección [https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cantones.geojson](https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cantones.geojson). Utilice la opción *Save Page As..* (Guardar página como...) al hacer clic derecho en su navegador web. Abra el archivo en QGIS (u otro SIG de escritorio) para verificar que se guardó correctamente.**
+
+##### Filtrado por atributos
 
 ```shell
 # Filtrado y extracción de los cantones con área >= 2000 km2
@@ -101,9 +103,16 @@ ogr2ogr -where "provincia = 'Heredia'" cantones-heredia.geojson cantones.geojson
 ogr2ogr -where "area >= 2000 AND provincia = 'Limón'" cantones-grandes-limon.geojson cantones.geojson
 ```
 
-Selección de atributos y filtrado:
+##### Selección de atributos y filtrado
 
 ```shell
 # Extracción de los campos de provincia, cantón y área de los cantones de la provincia de Alajuela
 ogr2ogr -select "provincia, canton, area" -where "provincia = 'Alajuela'" cantones-alajuela.geojson cantones.geojson
 ```
+
+**
+Ejercicios:  
+1. Utilizando el archivo ```cantones.geojson```, extraiga en otro archivo GeoJSON los cantones de la provincia de Guanacaste.  Incluya todos los campos.  
+2. Utilizando el archivo ```cantones.geojson```, extraiga en otro archivo GeoJSON los cantones de las provincia de Guanacaste, Puntarenas y Limón. Incluya todos los campos.  
+3. Repita el ejercicio 2, pero guarde el resultado en un archivo tipo Shapefile (SHP).  
+**
